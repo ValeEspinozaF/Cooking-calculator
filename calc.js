@@ -40,7 +40,7 @@ for(var i=0;i<=3;i++){
 
 fBtn.addEventListener("click", function(){
 	if (res.textContent !== "" && !isNaN(res.textContent)) {
-		res.textContent += "F";
+		res.textContent += " °F";
 		isFahrenheit = true;
 		isOunce = false;
 	}
@@ -48,7 +48,7 @@ fBtn.addEventListener("click", function(){
 
 ozBtn.addEventListener("click", function(){
 	if (res.textContent !== "" && !isNaN(res.textContent)) {
-		res.textContent += "oz";
+		res.textContent += " oz";
 		isOunce = true;
 		isFahrenheit = false;
 	}
@@ -83,7 +83,7 @@ eqBtn.addEventListener("click", function(){
 	let input = res.textContent.trim();
 	
 	if (isFahrenheit && input.endsWith("F")) {
-		let num = parseFloat(input.slice(0, -1));
+		let num = parseFloat(input.slice(0, -3));
 		if (!isNaN(num)) {
 			let celsius = (num - 32) * 5 / 9;
 			res.textContent = celsius.toFixed(2) + " °C";
@@ -96,7 +96,7 @@ eqBtn.addEventListener("click", function(){
 	}
 
 	if (isOunce && input.endsWith("oz")) {
-		let num = parseFloat(input.slice(0, -2));
+		let num = parseFloat(input.slice(0, -3));
 		if (!isNaN(num)) {
 			let grams = num * 28.3495;
 			res.textContent = grams.toFixed(2) + " g";
