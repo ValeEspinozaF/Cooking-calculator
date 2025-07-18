@@ -1,25 +1,62 @@
-table{
-    margin-left:auto; 
-    margin-right:auto;
+/* Make page fill the screen */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f8f8f8;
+    font-family: sans-serif;
 }
 
-textarea{
-    display: block;
-    margin-bottom: 8px;
-    margin-left:auto; 
-    margin-right:auto;
-    border-radius: 5px;
- }
+/* Center container and allow it to stretch */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
- button{
-    height: 40px;
-    width: 40px;
- }
- #opac{
+/* Calculator display */
+textarea {
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 1.8em;
+    text-align: right;
+    width: 90%;
+    max-width: 400px;
+    height: 60px;
+    padding: 10px;
+}
+
+/* Result preview */
+#opac {
     opacity: 0.25;
-    /* margin-left: 32%; */
-    /* margin-bottom: 3px; */
-    height: 19px;
-    width: 87px;
-    margin: auto;
+    height: 24px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 10px auto;
+    text-align: right;
+    font-size: 1em;
+}
+
+/* Button table */
+table {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+    table-layout: fixed;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    height: 60px;
+    font-size: 1.2em;
+    margin: 2px;
+}
+
+/* Optional: make icons inside buttons scale */
+button i.material-icons {
+    font-size: 1.5em;
 }
