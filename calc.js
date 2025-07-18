@@ -1,11 +1,15 @@
 var numKeys = [];
 var opns = [];
+var isFahrenheit = false;
+var isOunce = false;
 var res = document.querySelector("#resultArea");
 var clrBtn = document.querySelector("#clrTxt");
 var delBtn = document.querySelector("#del");
 var eqBtn = document.querySelector("#eq");
 var decPoint = document.querySelector("#decp");
 var opac=document.querySelector("#opac");
+var fBtn = document.querySelector("#fahrenheit");
+var ozBtn = document.querySelector("#ounce");
 var opnSyms = ["+", "-", "*", "/"];
 var symList;
 var tmpCal;
@@ -34,6 +38,22 @@ for(var i=0;i<=3;i++){
   	}(i));
 }
 
+fBtn.addEventListener("click", function(){
+	if (res.textContent !== "" && !isNaN(res.textContent)) {
+		res.textContent += "F";
+		isFahrenheit = true;
+		isOunce = false;
+	}
+});
+
+ozBtn.addEventListener("click", function(){
+	if (res.textContent !== "" && !isNaN(res.textContent)) {
+		res.textContent += "oz";
+		isOunce = true;
+		isFahrenheit = false;
+	}
+});
+
 clrBtn.addEventListener("click", function(){
 	res.textContent = "";
 	opac.innerHTML="";
@@ -60,6 +80,35 @@ decPoint.addEventListener("click", function(){
 });
 
 eqBtn.addEventListener("click", function(){
+	let input = res.textContent.trim();
+	
+	if (isFahrenheit && input.endsWith("F")) {
+		let num = parseFloat(input.slice(0, -1));
+		if (!isNaN(num)) {
+			let celsius = (num - 32) * 5 / 9;
+			res.textContent = celsius.toFixed(2) + " °C";
+			opac.innerHTML = "";
+		} else {
+			res.textContent = "Invalid Input";
+		}
+		isFahrenheit = false;
+		return;
+	}
+
+	if (isOunce && input.endsWith("oz")) {
+		let num = parseFloat(input.slice(0, -2));
+		if (!isNaN(num)) {
+			let grams = num * 28.3495;
+			res.textContent = grams.toFixed(2) + " g";
+			opac.innerHTML = "";
+		} else {
+			res.textContent = "Invalid Input";
+		}
+		isOunce = false;
+		return;
+	}
+
+	// Default behavior (math evaluation)
 	(function(i, j){
 		symList = [];
 		for(var i=0; i<opnSyms.length; i++){
