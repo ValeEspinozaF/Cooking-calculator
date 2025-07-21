@@ -2,6 +2,8 @@ var numKeys = [];
 var opns = [];
 var isFahrenheit = false;
 var isOunce = false;
+var isFeet = false;
+var isInches = false;
 var res = document.querySelector("#resultArea");
 var clrBtn = document.querySelector("#clrTxt");
 var delBtn = document.querySelector("#del");
@@ -10,6 +12,8 @@ var decPoint = document.querySelector("#decp");
 var opac=document.querySelector("#opac");
 var fBtn = document.querySelector("#fahrenheit");
 var ozBtn = document.querySelector("#ounce");
+var ftBtn = document.querySelector("#feet");
+var inBtn = document.querySelector("#inches");
 var opnSyms = ["+", "-", "*", "/"];
 var symList;
 var tmpCal;
@@ -51,6 +55,22 @@ ozBtn.addEventListener("click", function(){
 		res.textContent += " oz";
 		isOunce = true;
 		isFahrenheit = false;
+	}
+});
+
+ftBtn.addEventListener("click", function(){
+	if (res.textContent !== "" && !isNaN(res.textContent)) {
+		res.textContent += " ft";
+        isFeet = true;
+        isInches = false;
+	}
+});
+
+inBtn.addEventListener("click", function(){
+	if (res.textContent !== "" && !isNaN(res.textContent)) {
+		res.textContent += " in";
+		isInches = true;
+		isFeet = false;
 	}
 });
 
@@ -107,6 +127,30 @@ eqBtn.addEventListener("click", function(){
 		isOunce = false;
 		return;
 	}
+    
+    if (input.endsWith("ft")) {
+	    let num = parseFloat(input.slice(0, -3));
+	    if (!isNaN(num)) {
+		    let cm = num * 30.48;
+		    res.textContent = cm.toFixed(2) + " cm";
+		    opac.innerHTML = "";
+	    } else {
+		    res.textContent = "Invalid Input";
+	    }
+	return;
+    }
+    
+    if (input.endsWith("in")) {
+	    let num = parseFloat(input.slice(0, -3));
+	    if (!isNaN(num)) {
+		    let cm = num * 2.54;
+		    res.textContent = cm.toFixed(2) + " cm";
+		    opac.innerHTML = "";
+	    } else {
+		    res.textContent = "Invalid Input";
+	    }
+	    return;
+    }
 
 	// Default behavior (math evaluation)
 	(function(i, j){
