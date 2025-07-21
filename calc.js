@@ -127,30 +127,6 @@ eqBtn.addEventListener("click", function(){
 		isOunce = false;
 		return;
 	}
-    
-    if (input.endsWith("ft")) {
-	    let num = parseFloat(input.slice(0, -3));
-	    if (!isNaN(num)) {
-		    let cm = num * 30.48;
-		    res.textContent = cm.toFixed(2) + " cm";
-		    opac.innerHTML = "";
-	    } else {
-		    res.textContent = "Invalid Input";
-	    }
-	return;
-    }
-    
-    if (input.endsWith("in")) {
-	    let num = parseFloat(input.slice(0, -3));
-	    if (!isNaN(num)) {
-		    let cm = num * 2.54;
-		    res.textContent = cm.toFixed(2) + " cm";
-		    opac.innerHTML = "";
-	    } else {
-		    res.textContent = "Invalid Input";
-	    }
-	    return;
-    }
 
 	// Default behavior (math evaluation)
 	(function(i, j){
