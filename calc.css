@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #f8f8f8;
+    background-color: #64696C;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -55,6 +55,18 @@ button {
     height: 60px;
     font-size: 1.2em;
     margin: 2px;
+}
+
+.btn-danger {
+    background-color: #BC1E22;
+    border-color: #BC1E22;
+    color: white;
+}
+
+.btn-info {
+    background-color: #0870e0;
+    border-color: #0870e0;
+    color: white;
 }
 
 button i.material-icons {
