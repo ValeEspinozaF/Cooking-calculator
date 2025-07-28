@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #64696C;
+    background-color: #f8f8f8;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -59,13 +59,13 @@ button {
 
 .btn-danger {
     background-color: #BC1E22;
-    border-color: #BC1E22;
+    border-color: #a1181d;
     color: white;
 }
 
 .btn-info {
     background-color: #0870e0;
-    border-color: #0870e0;
+    border-color: #0661c2;
     color: white;
 }
 
