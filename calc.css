@@ -55,6 +55,9 @@ button {
     height: 60px;
     font-size: 1.2em;
     margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-danger {
