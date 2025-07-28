@@ -60,3 +60,16 @@ button {
 button i.material-icons {
     font-size: 1.5em;
 }
+
+active-icon {
+  color: black;
+  width: 60px;
+  height: 60px;
+}
+
+other-icon {
+  color: grey;
+  width: 40px;
+  height: 40px;
+}
+
