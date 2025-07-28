@@ -63,12 +63,12 @@ button i.material-icons {
 
 .active-icon {
   color: black;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .other-icon {
-  color: grey;
+  color: rgb(196, 196, 196);
   width: 40px;
   height: 40px;
 }
