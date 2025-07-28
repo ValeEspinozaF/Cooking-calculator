@@ -72,4 +72,6 @@ button {
 button i.material-icons {
     font-size: 1.7em;
     color: #394A59;
+    vertical-align: middle;
+    line-height: 1;
 }
