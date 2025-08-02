@@ -66,9 +66,35 @@ button {
     color: white;
 }
 
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #af1d21;  /* a bit darker */
+    border-color: #841519;      /* even deeper */
+    color: white;
+}
+
+.btn-danger:active {
+    background-color: #9a191d;  /* pressed = darkest */
+    border-color: #6e1215;
+    color: white;
+}
+
 .btn-info {
     background-color: #0870e0;
     border-color: #0661c2;
+    color: white;
+}
+
+.btn-info:hover,
+.btn-info:focus {
+    background-color: #0763c5;  /* a bit darker */
+    border-color: #054a94;      /* even deeper */
+    color: white;
+}
+
+.btn-info:active {
+    background-color: #0656ac;  /* pressed = darkest */
+    border-color: #043e7b;
     color: white;
 }
 
