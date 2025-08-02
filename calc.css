@@ -68,14 +68,9 @@ button {
 
 .btn-danger:hover,
 .btn-danger:focus {
-    background-color: #af1d21;  /* a bit darker */
-    border-color: #841519;      /* even deeper */
-    color: white;
-}
-
 .btn-danger:active {
-    background-color: #9a191d;  /* pressed = darkest */
-    border-color: #6e1215;
+    background-color: #841519;
+    border-color: #580e11;
     color: white;
 }
 
@@ -87,14 +82,9 @@ button {
 
 .btn-info:hover,
 .btn-info:focus {
-    background-color: #0763c5;  /* a bit darker */
-    border-color: #054a94;      /* even deeper */
-    color: white;
-}
-
 .btn-info:active {
-    background-color: #0656ac;  /* pressed = darkest */
-    border-color: #043e7b;
+    background-color: #054a94;
+    border-color: #043162;
     color: white;
 }
 
